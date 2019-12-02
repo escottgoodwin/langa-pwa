@@ -8,6 +8,7 @@ import {
   CardBody,
   Row,
   Col,
+  Container
 } from "reactstrap";
 
 import fire from '../firebase'
@@ -40,19 +41,18 @@ class SignUp extends Component {
 
   const { signIn} = this.state
   return (
-
+    <Container>
     <div style={{
     backgroundPosition: 'center',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundImage: `url(${bkgd})`}} >
 
-  <div style={{paddingRight:'30%',paddingLeft:'30%',paddingTop:'10%',paddingBottom:'10%'}} >
+  <div style={{paddingRight:'5%',paddingLeft:'5%',paddingTop:'5%',paddingBottom:'5%'}} >
 
     <center>
     
-
-    <Card className="card-stats">
+    <Card style={{height:'52em'}}>
     <CardHeader>
       
     </CardHeader>
@@ -72,23 +72,23 @@ class SignUp extends Component {
     </Row>
 
     <Row>
-    <Col  md="3">
+    <Col  xs="3">
 
       <FaAt style={{color:'#3A7891'}} size={54} onClick={() => this.setState({signIn:'email'})} />        
     
     </Col>
 
-      <Col  md="3">
+      <Col  xs="3">
         
           <FaGooglePlusSquare style={{color:'#3A7891'}} size={54} onClick={() => this.setState({signIn:'google'})}  />
           
       </Col>
-      <Col  md="3">
+      <Col  xs="3">
       
         <FaTwitterSquare style={{color:'#3A7891'}} size={54} onClick={() => this.setState({signIn:'twitter'})} />
         
       </Col>
-      <Col  md="3">
+      <Col  xs="3">
      
         <FaFacebook style={{color:'#3A7891'}} size={54} onClick={() => this.setState({signIn:'facebook'})} />
        
@@ -96,7 +96,7 @@ class SignUp extends Component {
     </Row>
 
     <Row>
-      <Col  md="12">
+      <Col  >
         {signIn==='email' &&
          <SignUpEmail history={this.props.history}/>
         }
@@ -113,11 +113,11 @@ class SignUp extends Component {
     </Row>
       <Row>
         <Col>
-        <div style={{marginBottom:40}}>
+        
         <Link to="/login"> 
           <h5>Login</h5>  
         </Link>
-        </div>
+        
         </Col>
       </Row>
       
@@ -128,7 +128,7 @@ class SignUp extends Component {
     </center>
   </div>
 </div>
-
+</Container>
   )
 }
 

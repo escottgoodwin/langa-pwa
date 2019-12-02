@@ -22,6 +22,7 @@
     "react-bootstrap-slider": "^2.2.2",
     "react-calendar": "^2.19.2",
     "react-chartjs-2": "2.7.6",
+    "react-date-picker": "^7.9.0",
     "react-dom": "16.8.6",
     "react-highlighter": "^0.4.3",
     "react-icons": "^3.7.0",

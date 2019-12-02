@@ -3,7 +3,10 @@ import React,{Component} from "react";
 import {
   Container,
   Row,
-  Col
+  Col,
+  Toast, 
+  ToastBody,
+  ToastHeader 
 } from "reactstrap";
 
 import VocabTest from '../components/VocabTest'
@@ -27,14 +30,15 @@ class Vocab extends Component{
             const { translations } = data
 
             return (                
-
+              <>
               <div className="content">
+                
                 
                 <Container >
 
                 <Row >
                   <Col >
-                  <div style={{fontSize:18,paddingTop:30,paddingBottom:10}}>Translate foreign words into your native language.</div>
+                  <div style={{fontSize:18}}>Translate foreign words into your native language.</div>
                   </Col>
                 </Row>
                 <hr/>
@@ -45,9 +49,12 @@ class Vocab extends Component{
                 </Row>
 
               </Container>
+              
+                
+               
               </div>
-
-
+              
+              </>
             )
           }}
         </Query>

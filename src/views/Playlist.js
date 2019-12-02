@@ -1,44 +1,30 @@
-import React, { Component } from "react";
+import React from "react";
+import { Link } from 'react-router-dom'
+import { sortDate } from '../util'
 
 import {
   Row,
   Col,
-  Container
+  Container,
+  Button
 } from "reactstrap"
 
 import { Query } from "react-apollo"
 import { PLAYLIST_QUERY } from '../ApolloQueries'
 
 import LinkRecPlaylist from '../components/LinkRecPlaylist'
+import Error from './Error'
 
-function sortDate(array){
-
-  return array.sort(function(a, b) {
-    a = new Date(a.date);
-    b = new Date(b.date);
-    return a>b ? -1 : a<b ? 1 : 0;
-  })
-}
-
-
-class PlayList extends Component{
-
-    render(){
+const PlayList = () => {
 
     return(
 
-          <div className="content">
-          <Container >
-
-            <Row >
-              <Col md="12" >
-              <div style={{marginTop:30}}>
-              <Query  query={PLAYLIST_QUERY}
+      <Query  query={PLAYLIST_QUERY}
                     fetchPolicy={'cache-and-network'}
                   >
                 {({ loading, error, data }) => {
                 if (loading) return <div style={{height:'100vh',backgroundColor:'#F4F3EF'}} > </div>
-                if (error) return <div>{JSON.stringify(error)}</div>
+                if (error) return <Error {...error} />
 
                 const { playList } = data
 
@@ -46,27 +32,38 @@ class PlayList extends Component{
     
                 return (
 
-                  <Row >
-                    <Col md="12">
+      
+          <Container style={{marginTop:50}}a>
 
-                      {
-                        playListSorted.map((r) => <LinkRecPlaylist key={r.art_id} {...r} />)
-                      }
-              
-                    </Col>
-                  </Row>
-                )
-              }}
-          </Query>
-          </div>
-          </Col>
-        </Row>
+            <Row >
 
-          </Container>
-          </div>
+              <Col >
+                <Link 
+                    to={{ 
+                    pathname: '/admin/play_playlist', 
+                    state: {
+                      playList
+                    }
+                    }}>   
+                    <Button block color="success" > 
+                      Play
+                    </Button>
+                </Link>
+
+              </Col>
+            </Row>
+            <hr />
+            <Row style={{marginTop:10}}>
+              <Col md="12" >
+                { playListSorted.map((r) => <LinkRecPlaylist key={r.art_id} {...r} />) }
+              </Col>
+            </Row>
+
+      </Container>
+        )
+      }}
+    </Query>
     )
-    }
   }
   
-
 export default PlayList

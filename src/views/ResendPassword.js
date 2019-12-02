@@ -11,7 +11,8 @@ import {
   Col,
   FormGroup,
   Input,
-  Button
+  Button,
+  Container
 } from "reactstrap";
 
 import bkgd from "assets/img/loginmap1.jpg";
@@ -35,18 +36,18 @@ class ResendPassword extends Component {
   const { email} = this.state
 
   return (
-
+    <Container>
     <div style={{
+    height:'100vh',
     backgroundPosition: 'center',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundImage: `url(${bkgd})`}} >
 
-  <div style={{paddingRight:'30%',paddingLeft:'30%',paddingTop:'10%',paddingBottom:'10%'}} >
+    <div style={{paddingRight:'5%',paddingLeft:'5%',paddingTop:'30%',paddingBottom:'30%'}} >
 
     <center>
     
-
     <Card className="card-stats">
     <CardHeader>
       
@@ -99,11 +100,10 @@ class ResendPassword extends Component {
       </CardBody>
     </Card>
 
-     
     </center>
   </div>
 </div>
-
+</Container>
   )
 }
 

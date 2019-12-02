@@ -1,4 +1,6 @@
-import React,{Component} from "react";
+import React from "react";
+import { sortDate } from '../util'
+
 import {
   Row,
   Col,
@@ -9,19 +11,8 @@ import { ARTICLE_REC_ALL_QUERY } from '../ApolloQueries'
 
 import LinkRecMain from './LinkRecMain'
 
-function sortDate(array){
-
-  return array.sort(function(a, b) {
-    a = new Date(a.date);
-    b = new Date(b.date);
-    return a>b ? -1 : a<b ? 1 : 0;
-  })
-}
-
-class ArtRecs extends Component{
-
-  render(){
-    const { lang } = this.props.location.state
+const ArtRecs = ({location}) => {
+    const { lang } = location.state
     return(
 
       <Query  query={ARTICLE_REC_ALL_QUERY}
@@ -53,6 +44,6 @@ class ArtRecs extends Component{
 
       )
     }
-  }
+
 
 export default ArtRecs

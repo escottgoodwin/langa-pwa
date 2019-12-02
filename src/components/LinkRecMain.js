@@ -10,46 +10,13 @@ import {
 import { Mutation } from "react-apollo"
 import { ADD_PLAYLIST_MUTATION, REMOVE_PLAYLIST_MUTATION, ARTICLE_REC_ALL_QUERY } from '../ApolloQueries'
 
+import PlaylistButton from './PlaylistButton'
+
 const LinkRecMain = ({ lang, art_id, date, title, playlist }) => 
     <>
     <Row>
-      <Col md="1">
-      {playlist ? 
-
-        <Mutation
-          mutation={REMOVE_PLAYLIST_MUTATION}
-          variables={{ art_id }}
-          refetchQueries={() => {
-            return [{
-              query: ARTICLE_REC_ALL_QUERY,
-              variables:{ lang }
-             }];
-          }}
-          >
-          {mutation => (
-            <Button onClick={mutation} size="sm" color="success">PL</Button>
-          )}
-        </Mutation>
-         
-         :
-
-         <Mutation
-          mutation={ADD_PLAYLIST_MUTATION}
-          variables={{ art_id }}
-          refetchQueries={() => {
-            return [{
-              query: ARTICLE_REC_ALL_QUERY,
-              variables:{ lang }
-             }];
-          }}
-          >
-          {mutation => (
-            <Button onClick={mutation} size="sm" outline color="success">PL</Button>
-          )}
-        </Mutation>
-      }
-      </Col>
-      <Col md="11">
+      
+      <Col >
 
       <div key={art_id}>
         <div>{moment(date).format('MMMM Do YYYY')}</div>
@@ -68,6 +35,13 @@ const LinkRecMain = ({ lang, art_id, date, title, playlist }) =>
           </div>
         </div>
         </Col>
+    </Row>
+    <Row>
+    <Col >
+
+      <PlaylistButton lang={lang} art_id={art_id} date={date} title={title} playlist={playlist} />
+
+    </Col>
     </Row>
     <hr/>
     </>              

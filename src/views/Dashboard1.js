@@ -32,7 +32,7 @@ const Dashboard = () => {
                   lang: 'en'
                 }
               }}>
-                <h4> <Flag code="gb" height="30" /> English </h4>
+                <h5> <Flag code="gb" height="52" /> English </h5>
             </Link >
           <div>
             </div>
@@ -48,7 +48,7 @@ const Dashboard = () => {
                   lang: 'fr'
                 }
               }}>
-                  <h4> <Flag code="fr" height="30" /> French</h4>
+                  <h5> <Flag code="fr" height="52" /> French</h5>
             </Link >
 
             </td>
@@ -62,7 +62,7 @@ const Dashboard = () => {
                   lang: 'de'
                 }
               }}>
-                  <h4> <Flag code="de" height="30" /> German</h4>
+                  <h5> <Flag code="de" height="52" /> German</h5>
             </Link >
           
             </td>
@@ -76,7 +76,7 @@ const Dashboard = () => {
                   lang: 'es'
                 }
               }}>
-                <h4> <Flag code="es" height="30" /> Spanish</h4>
+                <h5> <Flag code="es" height="52" /> Spanish</h5>
             </Link >
 
             </td>

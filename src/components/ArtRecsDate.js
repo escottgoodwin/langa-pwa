@@ -1,5 +1,5 @@
 import React,{Component} from "react";
-
+import { sortDate } from '../util'
 import Flag from 'react-world-flags'
 
 import {
@@ -13,15 +13,6 @@ import LinkRecHistory from './LinkRecHistory'
 import { Query } from "react-apollo"
 import { ARTICLE_REC_DATE_QUERY } from '../ApolloQueries'
 
-function sortDate(array){
-
-  return array.sort(function(a, b) {
-    a = new Date(a.date);
-    b = new Date(b.date);
-    return a>b ? -1 : a<b ? 1 : 0;
-  })
-}
-
 class ArtRecsDate extends Component{
 
   render(){
@@ -29,27 +20,27 @@ class ArtRecsDate extends Component{
     return(
       <Query  query={ARTICLE_REC_DATE_QUERY}
           fetchPolicy={'cache-and-network'}
-          variables={{ lang, date: searchDate }}  >
+          variables={{ lang, date: searchDate }} >
         {({ loading, error, data }) => {
         if (loading) return <div style={{height:'100vh',backgroundColor:'#F4F3EF'}} > </div>
         if (error) return <div>{JSON.stringify(error)}</div>
 
         const { articleRecommendationsHistory } = data
+        console.log(data)
         const artRecsSorted = sortDate(articleRecommendationsHistory)
         return (
 
           <>
+          <hr />
             <Row>
               <Col >
                 <h5>{moment(searchDate).format('MMMM Do YYYY')}</h5>
               </Col>
             </Row>
             <Row>
-              <Col md="1">
-                <Flag code={flag} /> 
-              </Col>
-              <Col md="11">
-                <h5> {articleRecommendationsHistory.length} {language} Recommendations</h5>
+
+              <Col >
+                <h5> <Flag code={flag} height="24"/>  {artRecsSorted.length} {language} Recommendations</h5>
               </Col>
             </Row>
 

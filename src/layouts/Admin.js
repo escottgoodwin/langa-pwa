@@ -13,6 +13,8 @@ import routes from "routes.js";
 import Article from "../views/Article";
 import ArtRecDate from "views/ArtRecDate";
 import LinkRecsEx from "views/LinkRecsEx";
+import PlayListPlay1 from "views/PlayListPlay1";
+import PlayListPlay from "views/PlayListPlay";
 
 var ps;
 
@@ -109,7 +111,19 @@ class Dashboard extends React.Component {
               path='/admin/linkrecex/:link'
               component={LinkRecsEx}
               name='Link Recommendation'
+            /> 
+
+            <Route
+              path='/admin/play_article'
+              component={PlayListPlay1}
+              name='Play Article'
             />  
+
+            <Route
+              path='/admin/play_playlist'
+              component={PlayListPlay}
+              name='Play Playlist'
+            />    
 
           </Switch>
           <Footer fluid />

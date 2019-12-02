@@ -154,13 +154,18 @@ class VocabTest extends Component{
 
       <>
   
-      <Row >
-            <Col >
-
           <Row >
             <Col >
-            
-              <Flag code={trans_flag} height="48" />  <FaLongArrowAltRight style={{fontSize:56}}/> <Flag code={native_flag} height="48" />
+
+              <Flag code={trans_flag} height="48" />  
+              </Col>
+
+              <Col >
+                <FaLongArrowAltRight style={{fontSize:56}}/>
+              </Col >
+              <Col> 
+              
+              <Flag code={native_flag} height="48" />
             
            </Col>
           </Row>
@@ -168,7 +173,7 @@ class VocabTest extends Component{
           <Row >
             <Col >
 
-              <h5 style={{marginTop:20,marginBottom:20}}>What does <span style={{color:"#17a2b8"}}> {newQuestion} </span> mean in {language}?</h5>
+              <h5 style={{marginTop:20,marginBottom:20}}>What does <span style={{color:"#17a2b8"}}> <b>{newQuestion}</b> </span> mean in {language}?</h5>
  
             </Col>
           </Row>
@@ -183,7 +188,7 @@ class VocabTest extends Component{
        
           <Row fluid='true'>
           <Col >
-            <Button onClick={() => this.checkVocab(newQuestion, newAnswer, guess, art_id, trans_lang,answereds)} color="primary" outline >
+            <Button block onClick={() => this.checkVocab(newQuestion, newAnswer, guess, art_id, trans_lang,answereds)} color="primary" outline >
               Submit
             </Button>
           </Col>
@@ -191,20 +196,19 @@ class VocabTest extends Component{
 
         <Row>
           <Col >
-
+             
               <Alert color={correct ? 'success':'danger'} isOpen={feedback} toggle={this.toggle}>
                 
-                 <div style={{fontSize:18}}>Your answer was {correct ? 'correct' : 'incorrect' }.</div>
-                 <div style={{fontSize:18}}><b>{curQuestion}</b> means <b>{curAnswer}</b>.</div>
-             
-              </Alert>
-
+                <div style={{fontSize:16}}>Your answer was {correct ? 'correct' : 'incorrect' }.</div>
+                <div style={{fontSize:16}}><b>{curQuestion}</b> means <b>{curAnswer}</b>.</div>
+            
+             </Alert>
+ 
           </Col>
 
         </Row>
 
-
-        </Col>
+        <Row>
 
         <Col>
           <h5>Answers</h5>
