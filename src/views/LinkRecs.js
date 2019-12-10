@@ -36,12 +36,12 @@ class LinkRecs extends Component{
         <Row fluid='true'>
           <Col lg="12" md="12" sm="12">
 
-          <ButtonGroup>
-            <Button onClick={() => this.setState({transLang:'en'})}>English</Button>
-            <Button onClick={() => this.setState({transLang:'fr'})}>French</Button>
-            <Button onClick={() => this.setState({transLang:'de'})}>German</Button>
-            <Button onClick={() => this.setState({transLang:'es'})}>Spanish</Button>
-          </ButtonGroup>
+
+            <Button outline active={transLang==='en' ? true : false} color="success" onClick={() => this.setState({transLang:'en'})}>English</Button>
+            <Button outline active={transLang==='fr' ? true :  false} color="success" onClick={() => this.setState({transLang:'fr'})}>French</Button>
+            <Button outline active={transLang==='de' ? true : false} color="success" onClick={() => this.setState({transLang:'de'})}>German</Button>
+            <Button outline active={transLang==='es' ? true : false} color="success" onClick={() => this.setState({transLang:'es'})}>Spanish</Button>
+
 
           </Col>
             

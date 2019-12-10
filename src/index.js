@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import * as serviceWorker from './serviceWorker';
 import { ApolloClient } from 'apollo-client';
 import { createHttpLink } from 'apollo-link-http'
 import { setContext } from 'apollo-link-context'
@@ -60,3 +61,5 @@ ReactDOM.render(
     </ApolloProvider>
   </Router>
 , document.getElementById('root'))
+
+serviceWorker.register();

@@ -138,7 +138,7 @@ class Login extends Component {
   <div style={{paddingRight:'5%',paddingLeft:'5%',paddingTop:'5%',paddingBottom:'5%'}} >
 
     <center>
-    <div style={{margin:20}}>
+    <div style={{margin:5}}>
 
     <Card className="card-stats">
     
@@ -155,7 +155,7 @@ class Login extends Component {
       <hr />
 
         <Row>
-        <Col  xs="4" sm="4" md="4" lg="4">
+        <Col xs="4" sm="4" md="4" lg="4">
             <div onClick={() => this.googleSignIn(this.props)}> 
              <FaGooglePlusSquare size={54} style={{color:'#3A7891'}}   />
             </div>
@@ -171,10 +171,10 @@ class Login extends Component {
           </div>
           </Col>
         </Row>
-        <div style={{margin:50}}>
+        <div style={{margin:10}}>
           
             <Row>
-                <Col className="pl-1" md="12">
+                <Col xs="12" md="12">
                 <Form>
                   <FormGroup>
                     <label >
@@ -186,7 +186,7 @@ class Login extends Component {
                 </Col>
               </Row>
               <Row>
-              <Col className="pl-1" md="12">
+              <Col  xs="12" md="12">
               <Form>
                 <FormGroup controlid="formBasicPassword">
                   <label >
@@ -198,7 +198,7 @@ class Login extends Component {
               </Col>
               </Row>
               <Row>
-                <Col className="pl-1" md="12">
+                <Col xs="12" md="12">
                   <Button onClick={() => this.emailSignIn(this.props)} style={{backgroundColor:'#3A7891'}} >
                     Login
                   </Button>
@@ -237,9 +237,9 @@ class Login extends Component {
       </div>
     </div>
 
-  );
+  )
 }
 
-};
+}
 
-export default Login;
+export default Login
