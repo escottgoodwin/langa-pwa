@@ -1,21 +1,8 @@
 {
   "projects": {
-    "default": "quandrio-ee823"
+    "default": "langolearn"
   },
   "targets": {
-    "quandrio-ee823": {
-      "hosting": {
-        "paper-flower": [
-          "paper-flower"
-        ],
-        "langolearn": [
-          "langolearn"
-        ],
-        "langa-pwa": [
-          "langa-pwa"
-        ]
-      }
-    },
     "langolearn": {
       "hosting": {
         "langolearn": [
@@ -27,6 +14,9 @@
         ],
         "langalearn": [
           "langalearn"
+        ],
+        "langa-pwa": [
+          "langa-pwa"
         ]
       }
     }

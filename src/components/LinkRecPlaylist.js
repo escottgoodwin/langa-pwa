@@ -31,7 +31,7 @@ const LinkRecPlaylist = ({ lang, art_id, date, title, playlist }) =>
                   playlist
                 }
                 }}>
-              <div style={{color:'#3A7891'}}><h5 >{title}</h5></div>
+              <div style={{color:'#3A7891'}}>{title}</div>
             </Link>
             </div>
           </div>
@@ -50,7 +50,7 @@ const LinkRecPlaylist = ({ lang, art_id, date, title, playlist }) =>
           }}
           >
           {mutation => (
-            <Button  onClick={mutation} block color="danger"><FaTimes style={{fontSize:16}} /> Remove</Button>
+            <Button  onClick={mutation} size="sm" block color="danger"><FaTimes style={{fontSize:16}} /> Remove</Button>
           )}
           </Mutation>
       </Col>

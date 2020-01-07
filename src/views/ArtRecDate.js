@@ -52,18 +52,8 @@ onChangeLang = (lang, language, flag) => {
     return(
       <div className="content">
         <Container >
-          <Row>
-            
-          <Col >
-            <center> 
-              
-              <DatePicker
-                onChange={this.onChangeDate}
-                value={date}
-                required
-              />
-            </center>   
-            </Col>
+        
+            <Row>
             
               <Col>
               <center>
@@ -86,6 +76,20 @@ onChangeLang = (lang, language, flag) => {
                
              </center>
               </Col>
+            </Row>
+
+            <Row>
+            
+          <Col >
+            <center> 
+              
+              <DatePicker
+                onChange={this.onChangeDate}
+                value={date}
+                required
+              />
+            </center>   
+            </Col>
             </Row>
   
  

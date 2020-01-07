@@ -22,7 +22,7 @@ const PlaylistButton = ({ lang, art_id, playlist }) =>
           }}
           >
           {mutation => (
-            <Button onClick={mutation} block color="success">Playlist</Button>
+            <Button onClick={mutation} size="sm" block color="success">Playlist</Button>
           )}
         </Mutation>
          
@@ -39,7 +39,7 @@ const PlaylistButton = ({ lang, art_id, playlist }) =>
           }}
           >
           {mutation => (
-            <Button onClick={mutation} block outline color="success">Playlist</Button>
+            <Button onClick={mutation} size="sm" block outline color="success">Playlist</Button>
           )}
         </Mutation>
       }

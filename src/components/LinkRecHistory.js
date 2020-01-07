@@ -13,6 +13,29 @@ import { ADD_PLAYLIST_MUTATION, REMOVE_PLAYLIST_MUTATION, ARTICLE_REC_DATE_QUERY
 const LinkRecHistory = ({ lang, art_id, date, title, playlist, searchDate }) => 
   <>
     <Row>
+
+      <Col >
+
+      <div key={art_id}>
+        <div>{moment(date).format('MMMM Do YYYY')}</div>
+        <div>
+          <Link 
+              to={{ 
+              pathname: '/admin/article', 
+              state: {
+                art_id: art_id,
+                lang,
+                playlist
+              }
+              }}>
+            <div style={{color:'#3A7891'}}>{title}</div>
+          </Link>
+          </div>
+        </div>
+        </Col>
+      </Row>
+
+      <Row>
       <Col style={{alignItems:'start'}} md="1">
       {playlist ? 
 
@@ -28,7 +51,7 @@ const LinkRecHistory = ({ lang, art_id, date, title, playlist, searchDate }) =>
           }}
           >
           {mutation => (
-            <Button onClick={mutation} size="sm" color="success">PL</Button>
+            <Button block onClick={mutation} size="sm" color="success">Playlist</Button>
           )}
         </Mutation>
          
@@ -46,30 +69,11 @@ const LinkRecHistory = ({ lang, art_id, date, title, playlist, searchDate }) =>
           }}
           >
           {mutation => (
-            <Button onClick={mutation} size="sm" outline color="success">PL</Button>
+            <Button onClick={mutation} size="sm" block outline color="success">Playlist</Button>
           )}
         </Mutation>
       }
       </Col>
-      <Col md="11">
-
-      <div key={art_id}>
-        <div>{moment(date).format('MMMM Do YYYY')}</div>
-        <div>
-          <Link 
-              to={{ 
-              pathname: '/admin/article', 
-              state: {
-                art_id: art_id,
-                lang,
-                playlist
-              }
-              }}>
-            <div style={{color:'#3A7891',fontSize:18}}>{title}</div>
-          </Link>
-          </div>
-        </div>
-        </Col>
     </Row>
     <hr />
     </>                 
