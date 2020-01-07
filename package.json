@@ -25,6 +25,7 @@
     "react-date-picker": "^7.9.0",
     "react-dom": "16.8.6",
     "react-highlighter": "^0.4.3",
+    "react-html-parser": "^2.0.2",
     "react-icons": "^3.7.0",
     "react-notification-alert": "0.0.12",
     "react-router": "5.0.0",

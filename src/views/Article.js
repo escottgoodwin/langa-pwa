@@ -4,6 +4,7 @@ import axios from 'axios'
 import { langSwitch } from '../util'
 import Flag from 'react-world-flags'
 import { Link } from 'react-router-dom'
+import ReactHtmlParser from 'react-html-parser';
 
 import {
   Row,
@@ -247,9 +248,9 @@ class Article extends Component{
             <Col>
                   
                   <div  onMouseUp={() => this.selectText(window.getSelection().toString())}>
-                    <h5>
-                      {article}
-                    </h5>
+                    <p>
+                      { ReactHtmlParser(article) }
+                    </p>
                   </div>
   
                 </Col>
